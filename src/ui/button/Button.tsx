@@ -5,24 +5,17 @@ interface ButtonProps {
   children: ReactNode;
   htmlType?: "button" | "submit" | "reset" | undefined;
   onClick?: () => void;
-  type?:
-    | "link"
-    | "text"
-    | "ghost"
-    | "default"
-    | "primary"
-    | "dashed"
-    | undefined;
+  type?: "primary" | "link" | "text" | "ghost" | "default" | "dashed";
   danger?: boolean;
   loading?: boolean;
-  shape?: "default" | "circle" | "round" | undefined;
+  shape?: "circle" | "default" | "round" | undefined;
   icon?: ReactNode;
 }
 
 export const Button: FC<ButtonProps> = ({
   children,
   type,
-  htmlType,
+  htmlType = "button",
   onClick,
   loading,
   danger,
